@@ -1,20 +1,22 @@
 # RFQHarvester
 
-**RFQHarvester** is a general-purpose Python web scraper for extracting RFQ (Request for Quotation) data from sourcing platforms like Alibaba and others with similar page structures.
+**RFQHarvester** is a general-purpose Python-based scraper for extracting **Request for Quotation (RFQ)** data from sourcing platforms with structured listing pages. It is designed for ethical, research-oriented, and compliant usage scenarios.
+
+> ⚠️ *This project is a proof of concept. Please ensure your usage complies with the terms of service and legal requirements of any platform you target.*
 
 ---
 
 ### 🌐 Features
 
-- Extracts RFQ metadata (title, buyer name, country, quantity, quotes left, etc.)
-- Supports platform-specific flags (Email Confirmed, Experienced Buyer, etc.)
-- Outputs structured CSV data
-- Supports command-line argument for input URL
-- Deduplicates by RFQ ID and Title
+* Extracts detailed RFQ metadata: title, buyer info, country, quantity, inquiry status, etc.
+* Identifies platform-specific attributes like *email verified*, *experienced buyer*, or *interactive user*
+* Exports clean, deduplicated data to CSV
+* Supports input via command-line URLs
+* Intended for platforms with consistent, paginated HTML RFQ listings
 
 ---
 
-### 📦 Output CSV Format
+### 📦 CSV Output Schema
 
 ```csv
 RFQ ID,Title,Buyer Name,Buyer Image,Inquiry Time,Quotes Left,Country,
@@ -26,12 +28,14 @@ Typical Replies,Interactive User,Inquiry URL,Inquiry Date,Scraping Date
 
 ### ⚙️ Requirements
 
-- Python 3.8+
-- Google Chrome + ChromeDriver
-- `selenium`
-- `pandas`
+* Python 3.8+
+* Google Chrome & ChromeDriver (installed and available in PATH)
+* Python packages:
 
-Install dependencies:
+  * `selenium`
+  * `pandas`
+
+Install dependencies using:
 
 ```bash
 pip install selenium pandas
@@ -41,18 +45,31 @@ pip install selenium pandas
 
 ### 🚀 Usage
 
-Run the scraper by passing the RFQ listing page URL as an argument:
+You can run the scraper from the command line by passing a URL that points to a publicly accessible RFQ listing page:
 
 ```bash
-python scraper.py "https://sourcing.alibaba.com/rfq/rfq_search_list.htm?country=AE&recently=Y"
+python scraper.py "https://example.com/rfq/listing"
 ```
+
+> Note: The scraper assumes a consistent HTML structure. Adjustments may be needed for different platforms.
+
+---
+
+### 📌 Roadmap
+
+* ✅ MVP with working CLI and CSV export
+* 🔄 Plan to add Docker-based setup for easier deployment
+* 📥 Optionally support headless scraping or scheduling
+* 💬 Invite feedback and contributors for improved portability
+
+---
 
 ### 📄 License
 
-MIT License
+MIT License — open to use, adapt, and extend.
 
 ---
 
 ### 👤 Author
 
-Built by Shoury Sinha
+Built by [Shoury Sinha](https://github.com/WorkedUpShoury)
