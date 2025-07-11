@@ -3,6 +3,10 @@
 **RFQHarvester** is a general-purpose Python-based scraper for extracting **Request for Quotation (RFQ)** data from sourcing platforms with structured listing pages. It is designed for ethical, research-oriented, and compliant usage scenarios.
 
 > ⚠️ *This project is a proof of concept. Please ensure your usage complies with the terms of service and legal requirements of any platform you target.*
+> Scraping RFQs must be done ethically and within terms of service. Legitimate uses include:
+> Internal automation for companies monitoring buyer activity
+> Research and analysis
+> Controlled environments where access is permitted
 
 ---
 
